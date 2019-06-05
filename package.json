@@ -1,0 +1,17 @@
+{
+	"name": "vue-recorder",
+	"description": "vuejs recorder component",
+	"main": "src/app.js",
+	"version": "0.1.0",
+	"keywords": [
+		"vue",
+		"vuejs",
+		"recorder",
+		"vue-recorder",
+		"recorderjs",
+		"vue-recorderjs"
+	],
+	"dependencies": {
+		"recorderjs": "^1.0.1"
+	}
+}
