@@ -19,11 +19,15 @@ npm i vue-recorder
     ...
     methods: {
       startRecording() {
-        vueRecorder.startRecording();
+        vueRecorder
+          .startRecording()
+          .then(() => {
+            // start loader or animation for recording
+          });
       },
       stopRecording() {
         vueRecorder
-          .stopRecording()
+          .stopRecording() // accept and object with {<type: string>, <filename: string>} for audio
           .then( audio => {
             // audio as media file
           });
@@ -31,3 +35,14 @@ npm i vue-recorder
     }
   }
 ```
+
+## Methods
+
+
+| method              | description                           | params      | return type |
+|----                 |----                                   |----         |---- |
+| startRecording      | to start recording                    | _none_      | promise |
+| pauseRecording      | pause recodring                       | _none_      | boolean |
+| stopRecording       | to stop recording                     | Object: { type: String (default: 'audio/wav'), filename: String } | promise |
+| getRecordedAudio    | get recorded audio                    | _none_      | promise |
+| getRecordingStatus  | get recording status (pause/playing)  | _none_      | boolean |
